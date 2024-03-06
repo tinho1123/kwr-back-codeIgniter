@@ -25,6 +25,7 @@ class LoginController extends BaseController
      }
     $encrypter = \Config\Services::encrypter();
     $key = getenv('jwt.secret');
+    
     $message = $key.'asdasdas'.$key;
     $email = base64_encode($encrypter->encrypt($message));
     $iat = time();
