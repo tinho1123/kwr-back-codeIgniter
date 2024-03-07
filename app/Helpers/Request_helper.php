@@ -25,3 +25,9 @@ function getBody()
 {
     return requestKWR()['BODY'];
 }
+
+function getUser()
+{
+    return requestKWR()['ALL_HEADERS'];
+
+}

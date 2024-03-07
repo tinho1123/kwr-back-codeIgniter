@@ -7,5 +7,8 @@ return [
             "notFound" => "user not found",
             "alreadyRegistered" => "user already registered"
         ],
+        "authorization" => [
+            "notFound" => "not have authorization"
+        ]
     ]
 ];

@@ -27,6 +27,8 @@ class Routing extends BaseRouting
      */
     public array $routeFiles = [
         APPPATH . 'Routes/login.route.php',
+        APPPATH . 'Routes/products.route.php',
+
     ];
 
     /**
@@ -77,7 +79,7 @@ class Routing extends BaseRouting
      * Example:
      *  public $override404 = 'App\Errors::show404';
      */
-     public ?string $override404 = 'App\Errors::routeNotFound';
+    public ?string $override404 = 'App\Errors::routeNotFound';
 
     /**
      * If TRUE, the system will attempt to match the URI against

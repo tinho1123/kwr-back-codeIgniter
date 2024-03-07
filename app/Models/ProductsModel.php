@@ -4,9 +4,9 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ClientsModel extends Model
+class ProductsModel extends Model
 {
-    protected $table = 'clients';
+    protected $table = 'products';
     protected $primaryKey = 'id';
     protected $useAutoIncrement = true;
     protected $returnType = 'array';
@@ -16,11 +16,13 @@ class ClientsModel extends Model
         "uuid",
         "fk_company",
         "name",
-        "document",
-        "email",
-        "password",
+        "description",
+        "amount",
+        "quantity",
         "created_at",
-        "updated_at"
+        "user_insert",
+        "updated_at",
+        "user_update"
     ];
 
     protected bool $allowEmptyInserts = false;

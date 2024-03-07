@@ -33,7 +33,7 @@ class LoginController extends BaseController
          return responseKWR(['return' => false, 'message' => 'error fields', 'data' => $this->validator->getErrors()], 406);
       }
 
-      if (empty($findUser = $this->usersModel->find(["email" => $body->email]))) {
+      if (empty($findUser = $this->usersModel->where(["email" => $body->email])->first())) {
          return responseKWR(['return' => false, 'message' => lang('Validation.error.user.notFound')], 406);
       }
 

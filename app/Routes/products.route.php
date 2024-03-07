@@ -9,7 +9,7 @@ $routes->addPlaceholder([
     "e2e" => '[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{8,12}',
 ]);
 
-$routes->group('product', static function ($routes) {
-    $routes->post('', [\App\Controllers\LoginController::class, 'signInUser']);
-    $routes->get('', [\App\Controllers\LoginController::class, 'signUpUser']);
+$routes->group('product', ["filter" => \App\Filters\AuthenticationUser::class], static function ($routes) {
+    $routes->post('', [\App\Controllers\ProductController::class, 'createProduct']);
+    $routes->get('', [\App\Controllers\ProductController::class, 'getProduct']);
 });
