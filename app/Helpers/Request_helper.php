@@ -20,3 +20,8 @@ function requestKWR(): array
 
     return $requestInfo;
 }
+
+function getBody()
+{
+    return requestKWR()['BODY'];
+}
