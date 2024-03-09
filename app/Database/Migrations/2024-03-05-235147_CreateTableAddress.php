@@ -10,12 +10,12 @@ class CreateTableAddress extends Migration
     public function up()
     {
         $this->forge->addField([
-               'id' => [
+            'id' => [
                 'type' => 'INT',
                 'constraint' => 11,
                 'auto_increment' => true
             ],
-              'fk_client' => [
+            'fk_client' => [
                 'type' => 'INT',
                 'constraint' => 11,
             ],
@@ -28,7 +28,7 @@ class CreateTableAddress extends Migration
                 'constraint' => 255
             ],
             'neighborhood' => [
-                   'type' => 'VARCHAR',
+                'type' => 'VARCHAR',
                 'constraint' => 255
             ],
             'city' => [
@@ -36,12 +36,16 @@ class CreateTableAddress extends Migration
                 'constraint' => 255
             ],
             'uf' => [
-                   'type' => 'CHAR',
+                'type' => 'CHAR',
                 'constraint' => 2
             ],
             'country' => [
                 'type' => 'VARCHAR',
                 'constraint' => 45
+            ],
+            "reference" => [
+                "type" => "TEXT",
+                'null' => true
             ],
             'created_at' => [
                 'type' => 'TIMESTAMP',
@@ -56,7 +60,7 @@ class CreateTableAddress extends Migration
         ]);
 
         $this->forge->addPrimaryKey('id');
-        $this->forge->addForeignKey('fk_client', 'clients','id', 'CASCADE', 'RESTRICT');
+        $this->forge->addForeignKey('fk_client', 'clients', 'id', 'CASCADE', 'RESTRICT');
         $this->forge->createTable('address', true, ['engine' => 'InnoDB']);
     }
 
